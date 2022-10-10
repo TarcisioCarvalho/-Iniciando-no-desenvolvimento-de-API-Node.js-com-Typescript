@@ -1,2 +1,2 @@
-export const first:string = "Olá Mundo!";
+export const first = "Olá Mundo!";
 console.log(first);
