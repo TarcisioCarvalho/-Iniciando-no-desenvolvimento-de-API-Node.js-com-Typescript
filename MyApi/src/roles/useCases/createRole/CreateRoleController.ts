@@ -9,8 +9,8 @@ export class CreateRoleController{
 
     handle(request:Request,response:Response) : Response{
         const {name} = request.body;
-       
-        const role = this.rolesUseCase.execute( name );
+        
+        const role = this.rolesUseCase.execute( {name} );
 
         return response.status(201).json(role);
     }

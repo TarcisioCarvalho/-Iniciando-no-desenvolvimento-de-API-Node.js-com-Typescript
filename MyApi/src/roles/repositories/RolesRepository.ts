@@ -7,9 +7,15 @@ type createRoleDTO = {
 export class RolesRepository{
 
     private  roles:Role[] = [];
+    private static INSTANCE: RolesRepository;
 
-    constructor(){
+    private constructor(){
         this.roles = [];
+    }
+
+    public static getInstance(): RolesRepository{
+        if(!this.INSTANCE) return RolesRepository.INSTANCE = new RolesRepository();
+        return this.INSTANCE;
     }
 
     create({ name } : createRoleDTO) : Role{
