@@ -8,5 +8,23 @@
             "name":"Tarcísio",
             "email":"tarcisiokta2012@gmail.com"
         }
+    },
+    "paths":{
+        "/roles":{
+            "post":{
+                "tags":["Role"],
+                "summary":"Create a role",
+                "description":"Create a new role",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
