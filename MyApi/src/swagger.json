@@ -19,9 +19,32 @@
                     "content":{
                         "application/json":{
                             "schema":{
-                                "type":"object"
+                                "type":"object",
+                                "properties":{
+                                    "name":{
+                                        "type":"string"
+                                    }
+                                }
                             }
                         }
+                    }
+                },
+                "responses":{
+                    "201":{
+                        "description":"Role Created"
+                    },
+                    "400":{
+                        "description":"Role already exists"
+                    }
+                }
+            },
+            "get":{
+                "tags":["Role"],
+                "summary":"Lista all roles",
+                "description":"Return all roles paginated",
+                "responses":{
+                    "200":{
+                        "description":"Success"
                     }
                 }
             }
