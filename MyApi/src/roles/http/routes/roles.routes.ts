@@ -1,6 +1,7 @@
 import { RolesRepository } from "@roles/repositories/RolesRepository";
 import { roleController } from "@roles/useCases/createRole";
 import { CreateRoleController } from "@roles/useCases/createRole/CreateRoleController";
+import { deleteRoleController } from "@roles/useCases/deleterole";
 import { listRolesController } from "@roles/useCases/listRoles";
 import { ListRolesController } from "@roles/useCases/listRoles/ListRolesController";
 import { showRoleController } from "@roles/useCases/showrole";
@@ -23,7 +24,11 @@ rolesRouter.get("/:id",(request,response) => {
 });
 
 rolesRouter.put("/:id",(request,response) => {
-    return  updateRoleController.handle(request,response);
-  });
+  return  updateRoleController.handle(request,response);
+});
+
+rolesRouter.delete("/:id",(request,response) => {
+  return  deleteRoleController.handle(request,response);
+});
 
 export {rolesRouter};
